@@ -9,7 +9,7 @@ Läuft am Laptop in Chrome, Firefox oder Edge. Braucht Spotify Premium.
 
 1. Auf <https://developer.spotify.com/dashboard> eine App anlegen.
    - APIs: **Web API** und **Web Playback SDK**
-   - Redirect URIs: `http://127.0.0.1:8888/` und `https://rebser-otg.github.io/SpotifyKids/`
+   - Redirect URIs: `http://127.0.0.1:8888/` und `https://rebser.github.io/SpotifyKids/`
 2. Unter **User Management** die Spotify-Konten der Kinder eintragen (max. 5).
 3. Die **Client ID** in `auth.js` bei `CLIENT_ID` eintragen (für dieses Repo schon erledigt).
 4. Eine Playlist anlegen (sie muss dir gehören) und Folgen hineinlegen.

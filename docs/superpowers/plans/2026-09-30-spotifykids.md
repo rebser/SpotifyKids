@@ -15,7 +15,7 @@
 - No build step, no runtime dependencies, no `package.json`. `node --test` runs the `*.test.js` files as ES modules (verified on Node 22.22).
 - All UI text is German.
 - Playback works in desktop Chrome, Firefox and Edge only.
-- Redirect URIs: `http://127.0.0.1:8888/` (local) and `https://rebser-otg.github.io/SpotifyKids/` (deployed). Never use `localhost`.
+- Redirect URIs: `http://127.0.0.1:8888/` (local) and `https://rebser.github.io/SpotifyKids/` (deployed). Never use `localhost`.
 - Local server: `python3 -m http.server 8888 --bind 127.0.0.1`
 - Playlist contents come from `GET /playlists/{id}/items`, where each item's field is `item` (not `track`). Album tracks come from `GET /albums/{id}/tracks` (paged). There is no batch `/albums?ids=`.
 - Five player buttons, ⏮ · ⏪30 · ▶/⏸ · 30⏩ · ⏭, plus "↺ Von vorne" and ← back. No sleep timer.
@@ -421,7 +421,7 @@ const SCOPES = [
   'playlist-read-private', 'playlist-read-collaborative',
 ].join(' ');
 
-// http://127.0.0.1:8888/ locally, https://rebser-otg.github.io/SpotifyKids/ deployed.
+// http://127.0.0.1:8888/ locally, https://rebser.github.io/SpotifyKids/ deployed.
 const redirectUri = () => location.origin + location.pathname.replace(/index\.html$/, '');
 
 const b64url = bytes =>
@@ -1067,7 +1067,7 @@ Läuft am Laptop in Chrome, Firefox oder Edge. Braucht Spotify Premium.
 
 1. Auf <https://developer.spotify.com/dashboard> eine App anlegen.
    - APIs: **Web API** und **Web Playback SDK**
-   - Redirect URIs: `http://127.0.0.1:8888/` und `https://rebser-otg.github.io/SpotifyKids/`
+   - Redirect URIs: `http://127.0.0.1:8888/` und `https://rebser.github.io/SpotifyKids/`
 2. Unter **User Management** die Spotify-Konten der Kinder eintragen (max. 5).
 3. Die **Client ID** in `auth.js` bei `CLIENT_ID` eintragen.
 4. Eine Playlist anlegen (sie muss dir gehören) und Folgen hineinlegen.
@@ -1117,14 +1117,14 @@ git commit -m "docs: README with setup and test checklist"
 
 - [ ] **Step 3: Create the public repo and push** (the user approved this in the brainstorming session)
 
-Run: `gh repo create rebser-otg/SpotifyKids --public --source . --push`
+Run: `gh repo create rebser/SpotifyKids --public --source . --push`
 Expected: the repo URL is printed and `main` is pushed.
 
 - [ ] **Step 4: Enable Pages from `main` root**
 
-Run: `gh api -X POST repos/rebser-otg/SpotifyKids/pages -f 'source[branch]=main' -f 'source[path]=/'`
-Then poll until it's built: `gh api repos/rebser-otg/SpotifyKids/pages --jq .status` → `built`
-Verify: `curl -s -o /dev/null -w '%{http_code}' https://rebser-otg.github.io/SpotifyKids/` → `200`, and `…/app.js` → `200`.
+Run: `gh api -X POST repos/rebser/SpotifyKids/pages -f 'source[branch]=main' -f 'source[path]=/'`
+Then poll until it's built: `gh api repos/rebser/SpotifyKids/pages --jq .status` → `built`
+Verify: `curl -s -o /dev/null -w '%{http_code}' https://rebser.github.io/SpotifyKids/` → `200`, and `…/app.js` → `200`.
 
 ---
 
@@ -1146,4 +1146,4 @@ git commit -m "chore: set Spotify client ID"
 git push
 ```
 
-- [ ] **Step 6: The user repeats the login check on `https://rebser-otg.github.io/SpotifyKids/`.**
+- [ ] **Step 6: The user repeats the login check on `https://rebser.github.io/SpotifyKids/`.**

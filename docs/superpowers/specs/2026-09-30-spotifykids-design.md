@@ -27,7 +27,7 @@ all tracks; track boundaries are invisible to the user.
   `GET /albums/{id}/tracks`. Search is limited, but not used.
 - Auth: Authorization Code + **PKCE**, no client secret. The Client ID is public.
 - Redirect URIs: `http://127.0.0.1:8888/` (local) and
-  `https://rebser-otg.github.io/SpotifyKids/` (deployed). Spotify does not
+  `https://rebser.github.io/SpotifyKids/` (deployed). Spotify does not
   accept `localhost`. The app derives the redirect URI from `location`.
 - One Spotify account streams on one device at a time.
 

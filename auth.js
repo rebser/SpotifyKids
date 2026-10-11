@@ -8,7 +8,7 @@ const SCOPES = [
   'playlist-read-private', 'playlist-read-collaborative',
 ].join(' ');
 
-// http://127.0.0.1:8888/ locally, https://rebser-otg.github.io/SpotifyKids/ deployed.
+// http://127.0.0.1:8888/ locally, https://rebser.github.io/SpotifyKids/ deployed.
 const redirectUri = () => location.origin + location.pathname.replace(/index\.html$/, '');
 
 const b64url = bytes =>
